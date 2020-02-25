@@ -1,0 +1,21 @@
+npx postgraphile \
+  --subscriptions \
+  --watch \
+  --dynamic-json \
+  --no-setof-functions-contain-nulls \
+  --no-ignore-rbac \
+  --no-ignore-indexes \
+  --show-error-stack=json \
+  --host 0.0.0.0 \
+  --port 3000 \
+  --extended-errors hint,detail,errcode \
+  --export-schema-graphql schema.graphql \
+  --graphiql "/" \
+  --enhance-graphiql \
+  --allow-explain \
+  --enable-query-batching \
+  --legacy-relations omit \
+  --connection $DATABASE_URL \
+  --jwt-secret $JWT_SECRET \
+  --jwt-token-identifier mealplanner.jwt_token \
+  --schema mealplanner

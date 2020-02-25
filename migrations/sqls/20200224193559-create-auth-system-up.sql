@@ -31,7 +31,7 @@ create type mealplanner.jwt_token as (
   exp bigint
 );
 
-create function mealplanner.authenticate(
+create or replace function mealplanner.authenticate(
   email text,
   password text
 ) returns mealplanner.jwt_token as $$
@@ -40,7 +40,7 @@ declare
 begin
   select a.* into account
   from mealplanner_private.person_account as a
-  where a.email = email;
+  where a.email = $1;
 
   if account.password_hash = crypt(password, account.password_hash) then
     return (

@@ -9,3 +9,4 @@ copy . .
 run npm install
 
 expose 3000
+cmd ["./start_postgraphile.sh"]

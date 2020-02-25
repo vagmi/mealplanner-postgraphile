@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "migrate": "db-migrate up"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +12,9 @@
   "devDependencies": {
     "db-migrate": "^0.11.6",
     "db-migrate-pg": "^1.0.0"
+  },
+  "dependencies": {
+    "@graphile-contrib/pg-simplify-inflector": "^5.0.0-beta.1",
+    "postgraphile": "^4.5.5"
   }
 }
