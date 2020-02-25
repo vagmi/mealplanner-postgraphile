@@ -1,2 +1,5 @@
 /* Replace with your SQL commands */
-drop table mealplanner.person;
+begin;
+  drop table mealplanner.person;
+  drop function mealplanner.set_updated_at;
+commit;

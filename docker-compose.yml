@@ -17,6 +17,7 @@ services:
     environment:
       DATABASE_URL: postgres://postgres:password123@db/mealplanner?sslmode=disable
       JWT_SECRET: AVerySecretString
+      PGPASSWORD: password123
     depends_on:
       - db
     links:
